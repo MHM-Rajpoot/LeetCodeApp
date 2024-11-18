@@ -1,0 +1,22 @@
+
+# Create venv
+python -m venv myenv
+
+# PowerShell Execution Policy is set to Restrict, so 
+
+# Temp
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Restricted
+
+# Permanent
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
+
+# Get list 
+Get-ExecutionPolicy -List
+
+# Activate venv
+.myenv\Scripts\activate
+
+# Deactivate venv
+deactivate

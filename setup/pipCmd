@@ -1,0 +1,20 @@
+
+# All Packages Installed in Venv
+pip list
+
+# Upgrade
+python.exe -m pip install --upgrade pip
+
+# Version
+pip -V
+
+# Django
+pip install Django
+
+# Freeze
+pip freeze >> requirements.txt
+
+# After Project Finish use this to install like 
+pip install -r requirements.txt
+
+# Install Code Spell Checker from Extension

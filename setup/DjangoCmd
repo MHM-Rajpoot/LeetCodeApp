@@ -1,0 +1,36 @@
+
+# Start Project Django
+django-admin startproject LeetCodeHQ
+cd .\LeetCodeHQ\
+
+# Test project Start
+python manage.py runserver
+
+# Migrations Issue
+python manage.py migrate
+
+# Super User
+python manage.py createsuperuser
+    # Name:     mhm
+    # Email:    mhm@hotmail.com
+    # Password: mhm@123
+
+# Install Sqlite3 Editor
+
+# Start App
+python manage.py startapp leetcode
+
+# Install 
+django-intellisense by shamanu4
+
+# HTML Auto Complete Error rewrite setting.json
+{
+    "emmet.triggerExpansionOnTab": true,
+    "files.associations": {
+        "*html": "html"
+    },
+}
+
+# After each new model make migrations or app in main
+python .\manage.py makemigrations leetcode
+python .\manage.py migrate

@@ -1,0 +1,6 @@
+-- database: ./LeetCodeHQ/db.sqlite3
+
+DELETE FROM auth_user WHERE email = 'mhm@hotmail.com';
+
+SELECT * FROM ;
+
