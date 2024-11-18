@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Code Detail
+{% endblock  %}
+
+{% block content %}
+    <a href="{% url 'code_list' %}" class="btn btn-secondary">Back</a>
+    <div class="container" style="padding: 2%;">
+        {% if code.cpp %}
+            <div class="row">
+                <div class="col-6">
+                    <h2>{{ code.title }}.cpp</h2>
+                    <div style="position: relative;">
+                        <pre id="cpp-code">{{ code.cpp }}</pre>
+                        <div style="position: absolute; top: 0; right: 0;">
+                            <button class="btn btn-secondary" onclick="copyCode('cpp-code')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    {% if code.py %}
+                        <h2>{{ code.title }}.py</h2>
+                        <div style="position: relative;">
+                            <pre id="py-code">{{ code.py }}</pre>
+                            <div style="position: absolute; top: 0; right: 0;">
+                                <button class="btn btn-secondary" onclick="copyCode('py-code')">Copy</button>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>No Python code available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <p>No C++ code available.</p>
+        {% endif %}
+    </div>
+
+    <script>
+        function copyCode(id) {
+            var code = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(code);
+        }
+    </script>
+
+{% endblock %}
