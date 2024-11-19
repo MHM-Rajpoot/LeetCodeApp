@@ -9,7 +9,7 @@
     <div class="container" style="padding: 2%;">
         {% if code.cpp %}
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <h2>{{ code.title }}.cpp</h2>
                     <div style="position: relative;">
                         <pre id="cpp-code">{{ code.cpp }}</pre>
@@ -18,7 +18,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 d-md-block d-none">
+                    {% if code.py %}
+                        <h2>{{ code.title }}.py</h2>
+                        <div style="position: relative;">
+                            <pre id="py-code">{{ code.py }}</pre>
+                            <div style="position: absolute; top: 0; right: 0;">
+                                <button class="btn btn-secondary" onclick="copyCode('py-code')">Copy</button>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>No Python code available.</p>
+                    {% endif %}
+                </div>
+                <div class="d-md-none">
                     {% if code.py %}
                         <h2>{{ code.title }}.py</h2>
                         <div style="position: relative;">
