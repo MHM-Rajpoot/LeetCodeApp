@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>{{ code.title }}.cpp</h2>
-                    <div style="position: relative;">
+                    <div style="position: relative; padding-top: 10%;">
                         <pre id="cpp-code">{{ code.cpp }}</pre>
                         <div style="position: absolute; top: 0; right: 0;">
                             <button class="btn btn-secondary" onclick="copyCode('cpp-code')">Copy</button>
@@ -21,7 +21,7 @@
                 <div class="col-md-6 d-md-block d-none">
                     {% if code.py %}
                         <h2>{{ code.title }}.py</h2>
-                        <div style="position: relative;">
+                        <div style="position: relative; padding-top: 10%;">
                             <pre id="py-code">{{ code.py }}</pre>
                             <div style="position: absolute; top: 0; right: 0;">
                                 <button class="btn btn-secondary" onclick="copyCode('py-code')">Copy</button>
@@ -34,7 +34,7 @@
                 <div class="d-md-none">
                     {% if code.py %}
                         <h2>{{ code.title }}.py</h2>
-                        <div style="position: relative;">
+                        <div style="position: relative; padding-top: 10%;">
                             <pre id="py-code">{{ code.py }}</pre>
                             <div style="position: absolute; top: 0; right: 0;">
                                 <button class="btn btn-secondary" onclick="copyCode('py-code')">Copy</button>
