@@ -1,36 +1,64 @@
 
 # Start Project Django
-django-admin startproject LeetCodeHQ
-cd .\LeetCodeHQ\
+    django-admin startproject LeetCodeHQ
+    cd .\LeetCodeHQ\
 
 # Test project Start
-python manage.py runserver
+    python manage.py runserver
 
 # Migrations Issue
-python manage.py migrate
+    python manage.py migrate
 
 # Super User
-python manage.py createsuperuser
-    # Name:     mhm
-    # Email:    mhm@hotmail.com
-    # Password: mhm@123
+    python manage.py createsuperuser
+        # Name:     mhm
+        # Email:    mhm@hotmail.com
+        # Password: mhm@123
 
 # Install Sqlite3 Editor
 
 # Start App
-python manage.py startapp leetcode
+    python manage.py startapp leetcode
 
 # Install 
-django-intellisense by shamanu4
+    django-intellisense by shamanu4
 
 # HTML Auto Complete Error rewrite setting.json
-{
-    "emmet.triggerExpansionOnTab": true,
-    "files.associations": {
-        "*html": "html"
-    },
-}
+    {
+        "emmet.triggerExpansionOnTab": true,
+        "files.associations": {
+            "*html": "html"
+        },
+    }
 
 # After each new model make migrations or app in main
-python .\manage.py makemigrations leetcode
-python .\manage.py migrate
+    python .\manage.py makemigrations leetcode
+    python .\manage.py migrate
+
+# To load all files correctly 
+    python manage.py collectstatic
+
+# Define STATIC_ROOT
+
+    # Static files (CSS, JavaScript, Images)
+    # https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+    # Default primary key field type
+    # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+    DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+    # STATIC_URL = '/static/'
+    # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Also in web go to static file and define 
+
+    URL	            Directory	    
+    /static/	    /home/mhm101/LeetCodeApp/LeetCodeHQ/static	 
+    # Use CTRL + SHIFT + R for Force Reload 

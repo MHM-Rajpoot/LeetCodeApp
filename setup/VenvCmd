@@ -2,6 +2,8 @@
 # Create venv
 python -m venv myenv
 
+mkvirtualenv --python=/usr/bin/python3.9 myenv
+
 # PowerShell Execution Policy is set to Restrict, so 
 
 # Temp
@@ -17,6 +19,8 @@ Get-ExecutionPolicy -List
 
 # Activate venv
 .myenv\Scripts\activate
+
+. /home/mhm101/.virtualenvs/myenv/bin/activate
 
 # Deactivate venv
 deactivate
