@@ -12,13 +12,12 @@ Code Runner
         <textarea style="width: 100%; height: 300px; border-radius: 10px; padding: 10px;" id="in" name="code"
             placeholder="Write Your Code Here ..."></textarea>
 
-        <div style="padding: 2%; text-align: center;">
-            <select id="language" name="language" style="padding: 1%; border-radius: 10px;">
+            <div style="padding: 1%; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;"><select id="language" name="language" style="height: 50px; border-radius: 10px;">
                 <option value="py">Python</option>
                 <option value="cpp">C++</option>
             </select>
-            <button type="submit" style="margin-left: 1%; padding: 1%; border-radius: 10px;">Run</button>
-            <button type="submit" id="clear" name="clear" style="margin-left: 1%; padding: 1%; border-radius: 10px;">Clear</button>
+            <button class="btn btn-secondary" type="submit" style="height: 50px; border-radius: 10px;">Run</button>
+            <button class="btn btn-secondary" type="submit" id="clear" name="clear" style="height: 50px; border-radius: 10px;">Clear</button>
         </div>
 
         <textarea style="width: 100%; height: 150px; border-radius: 10px; padding: 10px;" id="out" name="output" readonly
