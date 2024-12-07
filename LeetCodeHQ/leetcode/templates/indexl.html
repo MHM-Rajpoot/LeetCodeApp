@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+    leetcode Solutions
+{% endblock  %}
+
+{% block content %}
+    <div class="container col gpa-2" style="padding: 3%;">
+        <table style="
+            width: 100%;
+            text-align: center;
+            border-spacing: 100px;
+            ">
+            <thead>
+                <tr>
+                    <th style="padding-block: 10px;">
+                        {% if order_by == 'cid' %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=-cid">
+                                <b>ID ↓</b>
+                            </a>
+                        {% else %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=cid">
+                                <b>ID ↑</b>
+                            </a>
+                        {% endif %}
+                    </th>
+                    <th style="padding-block: 10px;">
+                        {% if order_by == 'title' %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=-title">
+                                <b>Title ↓</b>
+                            </a>
+                        {% else %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=title">
+                                <b>Title ↑</b>
+                            </a>
+                        {% endif %}
+                    </th>
+                    <th style="padding-block: 10px;">
+                        {% if order_by == 'created_at' %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=-created_at">
+                                <b>Created At ↓</b>
+                            </a>
+                        {% else %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=created_at">
+                                <b>Created At ↑</b>
+                            </a>
+                        {% endif %}
+                    </th>
+                    <th style="padding-block: 10px;">
+                        {% if order_by == 'updated_at' %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=-updated_at">
+                                <b>Updated At ↓</b>
+                            </a>
+                        {% else %}
+                            <a class="btn btn-secondary" href="{% url 'code_list' %}?order_by=updated_at">
+                                <b>Updated At ↑</b>
+                            </a>
+                        {% endif %}
+                    </th>
+                    <th style="padding-block: 10px;">
+                        <b>View</b>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for code in codel %}
+                    <tr>
+                        <td style="padding-block: 5px;">{{ code.cid }}</td>
+                        <td style="padding-block: 5px;">{{ code.title }}</td>
+                        <td style="padding-block: 5px;">{{ code.created_at }}</td>
+                        <td style="padding-block: 5px;">{{ code.updated_at }}</td>
+                        <td style="padding-block: 5px;"><a href="{% url 'code_detail' code.cid %}" class="btn btn-secondary">view</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

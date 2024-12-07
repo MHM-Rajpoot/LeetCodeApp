@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}
+Code Runner
+{% endblock %}
+
+{% block content %}
+
+<div class="container" style="padding: 1%;">
+    <form method="post" action="{% url 'run_code' %}">
+        {% csrf_token %}
+        <textarea style="width: 100%; height: 300px; border-radius: 10px; padding: 10px;" id="in" name="code"
+            placeholder="Write Your Code Here ..."></textarea>
+
+        <div style="padding: 2%; text-align: center;">
+            <select id="language" name="language" style="padding: 1%; border-radius: 10px;">
+                <option value="py">Python</option>
+                <option value="cpp">C++</option>
+            </select>
+            <button type="submit" style="margin-left: 1%; padding: 1%; border-radius: 10px;">Run</button>
+            <button type="submit" id="clear" name="clear" style="margin-left: 1%; padding: 1%; border-radius: 10px;">Clear</button>
+        </div>
+
+        <textarea style="width: 100%; height: 150px; border-radius: 10px; padding: 10px;" id="out" name="output" readonly
+            placeholder="Code Output">{{ output }}</textarea>
+    </form>
+</div>
+
+<script>
+    
+    window.onload = function () {
+        
+        if (localStorage.getItem("inValue")) {
+            document.getElementById("in").value = localStorage.getItem("inValue");
+        }
+        
+        if (localStorage.getItem("langValue")) {
+            document.getElementById("language").value = localStorage.getItem("langValue");
+        }
+
+    };
+
+    document.getElementById("in").addEventListener("input", function () {
+        localStorage.setItem("inValue", document.getElementById("in").value);
+    });
+
+    document.getElementById("language").addEventListener("change", function () {
+        localStorage.setItem("langValue", document.getElementById("language").value);
+    });
+
+    document.getElementById("clear").addEventListener("click", function () {
+        document.getElementById("in").value = "";
+        document.getElementById("out").value = "";
+        localStorage.removeItem("inValue");
+        localStorage.removeItem("langValue");
+    });
+
+    document.getElementById("in").addEventListener("keydown", function(e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+        var start = this.selectionStart;
+        var end = this.selectionEnd;
+        this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+        this.selectionStart = this.selectionEnd = start + 1;
+    }
+    });
+
+</script>
+
+{% endblock %}
