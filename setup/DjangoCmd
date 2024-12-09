@@ -35,7 +35,7 @@
     python .\manage.py makemigrations leetcode
     python .\manage.py migrate
 
-# To load all files correctly 
+# To load all files correctly (While Deploying App)
     python manage.py collectstatic
 
 # Define STATIC_ROOT
