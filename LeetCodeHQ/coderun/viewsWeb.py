@@ -9,14 +9,15 @@ def indexc(request):
     return render(request, 'indexc.html')
 
 # View to handle code execution
-def run_code(request):
+def coding(request):
 
     output = ""
 
     if request.method == 'POST':
 
         if 'clear' in request.POST:
-            output = ""
+        #   output = ""
+            return redirect('indexc')
 
         else:
             language = request.POST.get('language')
