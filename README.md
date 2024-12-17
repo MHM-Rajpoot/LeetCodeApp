@@ -1,7 +1,6 @@
 # LeetCode Clone: Full-Stack Django Project
 
 ## Project Overview
----------------
 
 [Live Demo: Problem Solver](https://mhm101.pythonanywhere.com/leetcode/) | [Live Demo: Code Editor](https://mhm101.pythonanywhere.com/coderun/)
 
@@ -14,7 +13,6 @@ A Django-based full-stack implementation of a LeetCode clone, comprising:
 
 
 ## Features
-------------
 
 ### Problem Solver
 
@@ -31,7 +29,6 @@ A Django-based full-stack implementation of a LeetCode clone, comprising:
 
 
 ## Technology Stack
-------------------
 
 * Backend: Django (Python)
 * Frontend: HTML, CSS, JavaScript
@@ -40,7 +37,6 @@ A Django-based full-stack implementation of a LeetCode clone, comprising:
 
 
 ## Local Installation and Setup
-------------------------------
 
 1. Clone the repository: `git clone https://github.com/your-username/leetcode-clone.git`
 2. Install dependencies: `pip install -r requirements.txt`
@@ -50,13 +46,11 @@ A Django-based full-stack implementation of a LeetCode clone, comprising:
 
 
 ## License
--------
 
 [MIT License](LICENSE)
 
 
 ## Acknowledgments
---------------
 
 * Inspired by LeetCode
 * CodeMirror library for code editing functionality
