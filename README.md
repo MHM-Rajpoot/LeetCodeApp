@@ -1,5 +1,5 @@
 # LeetCode Clone: Full-Stack Django Project
-=====================================================
+
 ## Project Overview
 ---------------
 
